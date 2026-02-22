@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="fbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c4a494;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d9c5b0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- circle background -->
+  <circle cx="50" cy="50" r="49" fill="url(#fbGrad)"/>
+  <!-- Facebook F -->
+  <g fill="#fff">
+    <!-- vertical line -->
+    <rect x="43" y="28" width="5" height="45" rx="2"/>
+    <!-- top horizontal line -->
+    <rect x="43" y="28" width="20" height="5" rx="2"/>
+    <!-- middle horizontal line -->
+    <rect x="43" y="43" width="14" height="5" rx="2"/>
+  </g>
+</svg>
