@@ -58,3 +58,8 @@ export default app
 
   Note: Restart the dev server (npm run dev) after changing .env.
 */
+
+const emailOtpUrl = "https://dress-shop-backend.onrender.com/auth/send-email-otp"
+const loginUrl = "https://dress-shop-backend.onrender.com/auth/login"
+const registerUrl = "https://dress-shop-backend.onrender.com/auth/register"
+const verifyUrl = "https://dress-shop-backend.onrender.com/auth/verify"
