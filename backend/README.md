@@ -16,7 +16,7 @@ npm run dev   # Development with watch
 npm start     # Production
 ```
 
-Server runs on http://localhost:4000
+Server runs on https://dress-shop-backend-y4l0.onrender.com
 
 ## API Endpoints
 
