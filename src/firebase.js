@@ -59,7 +59,8 @@ export default app
   Note: Restart the dev server (npm run dev) after changing .env.
 */
 
-const emailOtpUrl = "https://dress-shop-backend.onrender.com/auth/send-email-otp"
-const loginUrl = "https://dress-shop-backend.onrender.com/auth/login"
-const registerUrl = "https://dress-shop-backend.onrender.com/auth/register"
-const verifyUrl = "https://dress-shop-backend.onrender.com/auth/verify"
+const BASE_API_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '') || 'https://dress-shop-backend-y4l0.onrender.com'
+const emailOtpUrl = `${BASE_API_URL}/auth/send-email-otp`
+const loginUrl = `${BASE_API_URL}/auth/login`
+const registerUrl = `${BASE_API_URL}/auth/register`
+const verifyUrl = `${BASE_API_URL}/auth/verify`
