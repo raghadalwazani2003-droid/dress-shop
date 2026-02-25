@@ -7,7 +7,7 @@ if (!import.meta.env.VITE_API_URL) {
 const API = axios.create({
   baseURL: import.meta.env.VITE_API_URL.replace(/\/$/, ''),
 })
-const API = axios.create({ baseURL })
+
 
 // Attach backend JWT to requests when present
 API.interceptors.request.use((config) => {
