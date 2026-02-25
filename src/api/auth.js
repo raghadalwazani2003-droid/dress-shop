@@ -1,6 +1,12 @@
 import axios from 'axios'
 
-const baseURL = import.meta.env.VITE_API_URL ?? ''
+if (!import.meta.env.VITE_API_URL) {
+  throw new Error("VITE_API_URL is not defined in environment variables")
+}
+
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_URL.replace(/\/$/, ''),
+})
 const API = axios.create({ baseURL })
 
 // Attach backend JWT to requests when present
