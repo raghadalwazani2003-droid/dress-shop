@@ -9,14 +9,29 @@ function getTransporter() {
   const pass = process.env.SMTP_PASS
   if (!host || !user || !pass) {
     console.warn('Email not configured. Set SMTP_HOST, SMTP_USER, SMTP_PASS in .env')
+    console.warn('Current values', { host, user: !!user, pass: !!pass })
     return null
   }
-  transporter = nodemailer.createTransport({
-    host,
-    port: parseInt(process.env.SMTP_PORT || '587', 10),
-    secure: false,
-    auth: { user, pass }
-  })
+  const port = parseInt(process.env.SMTP_PORT || '587', 10)
++  const secure = process.env.SMTP_SECURE === 'true' || port === 465
++  transporter = nodemailer.createTransport({
++    host,
++    port,
++    secure,
++    auth: { user, pass },
++  })
++
++  // log connection info in development
++  if (process.env.NODE_ENV !== 'production') {
++    console.log('[email] transporter created', { host, port, secure, user })
++    transporter.verify((err, success) => {
++      if (err) {
++        console.error('[email] verify error', err.message)
++      } else {
++        console.log('[email] smtp connection verified')
++      }
++    })
++  }
   return transporter
 }
 
